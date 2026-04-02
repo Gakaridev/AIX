@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: gakari-ai-backend
+    env: python
+    plan: free
+    region: singapore
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10.0
+      
+      # supabaseのダシュボからあとで設定する方が安全から変えるつもり
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_KEY
+        sync: false
