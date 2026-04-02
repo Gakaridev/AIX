@@ -1,4 +1,6 @@
 fastapi
 uvicorn
 llama-cpp-python
-huggingface_hub
+huggingface-hub
+requests
+supabase
